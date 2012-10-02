@@ -1,0 +1,42 @@
+<div id='contenedormayor'>
+    <div id='contenedor'>
+        <div id='mensaje'>
+            [[<span id='corchete'>VEHICULO NUEVO</span>]]  
+        </div>
+        <form action='save' method='POST'>
+            <div id=espaciovacio>
+            <label>ALIAS</label>
+            <input type=text value='' name=alias id=alias required>
+            <label>PLACA</label>
+            <input type=text value='' name=placa id=placa  required>
+            <label>MARCA</label>
+            <input type=text value='' name=marca id=marca>
+            </div>
+            <div id=espaciovacio>
+            <label>MODELO</label>
+            <input type=text value='' name=modelo id=modelo>
+            <label>A&O</label>
+            <input type=number min='1900' max='2012' name='ano' id='ano' maxlength=4>
+            <label>SERIE</label>
+            <input type=text value='' name=serie id=serie>
+            <label>MOTOR</label>
+            <input type=text value='' name=motor id=motor>
+            </div>
+            <div id=espaciovacio>
+            <label>CARROCERIA</label>
+            <input type=text value='' name=carroceria id=carroceria>
+            <label>COMBUSTIBLE</label>
+            <input type="text" name="combustible" id="combustible" list="combustibles"  required>
+            <datalist id="combustibles">
+            <option value="PETROLEO" />
+            <option value="GASOLINA" />
+            </datalist>
+            </div>
+            <div id='mensaje'>    
+            <input type='submit' value='GRABAR'>
+            <input type='reset' value='CANCELAR'>
+            <a href="/transportes/maestros/vehiculos" id=retornar>RETORNAR</a>
+            </div>
+        </form>
+    </div>
+</div>

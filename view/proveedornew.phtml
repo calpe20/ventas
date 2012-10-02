@@ -1,0 +1,28 @@
+<div id='contenedormayor'>
+    <div id='contenedor'>
+        <div id='mensaje'>
+            [[<span id='corchete'>PROVEEDOR NUEVO</span>]]  
+        </div>
+        <form action='/ventas/maestros/proveedor/save' method='POST'>
+            <div id=espaciovacio>
+            <label>RAZON SOCIAL : </label>
+            <input type=text name=nombres id=nombres size=50 required>
+            <label>DIRECCION</label>
+            <input type=text name=direccion id=direccion size=50>
+            </div>
+            <div id=espaciovacio>
+            <label>DNI / RUC</label>
+            <input type=text name=dniruc id=dniruc required>
+            <label>CIUDAD</label>
+            <input type=text name=ciudad id=ciudad required>
+            <label>TELEFONO</label>
+            <input type=text name=telefono id=telefono>
+            </div>
+            <div id='mensaje'>    
+            <input type='submit' value='GRABAR'>
+            <input type='reset' value='CANCELAR'>
+            <a href="/ventas/maestros/clientes" id=retornar>RETORNAR</a>
+            </div>
+        </form>
+    </div>
+</div>

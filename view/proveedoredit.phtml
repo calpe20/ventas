@@ -1,0 +1,34 @@
+<div id='contenedormayor'>
+    <div id='contenedor'>
+        <div id='mensaje'>
+            [[<span id='corchete'>MODIFICAR - PROVEEDOR | <? echo $_GET['id'];?></span>]]  
+        </div>
+        <form action='/ventas/maestros/proveedor/update' method='POST'>
+            <? foreach($Objproveedor->resultado as $resulta){ ?>
+            <div id=espaciovacio>
+            <input type=hidden name=codigo id=codigo value='<?=$_GET['id'];?>'>
+            <input type=hidden name=estado id=estado value='<?=$resulta['estado'];?>'>
+            <label>RAZON SOCIAL : </label>
+            <input type=text name=nombres id=nombres size=50 value='<?=$resulta['nombres'];?>' required>
+            </div>
+            <div id=espaciovacio>
+            <label>DIRECCION</label>
+            <input type=text name=direccion id=direccion size=50 value='<?=$resulta['direccion'];?>'>
+            <label>DNI / RUC</label>
+            <input type=text name=dniruc id=dniruc required value='<?=$resulta['dniruc'];?>'>
+            </div>
+            <div id=espaciovacio>
+            <label>CIUDAD</label>
+            <input type=text name=ciudad id=ciudad required value='<?=$resulta['ciudad'];?>'>
+            <label>TELEFONO</label>
+            <input type=text name=telefono id=telefono value='<?=$resulta['telefono'];?>'>
+            </div>
+            <div id='mensaje'>    
+            <input type='submit' value='GRABAR'>
+            <input type='reset' value='CANCELAR'>
+            <a href="/ventas/maestros/proveedor" id=retornar>RETORNAR</a>
+            </div>
+            <? }?>
+        </form>
+    </div>
+</div>

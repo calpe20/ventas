@@ -1,0 +1,71 @@
+<div id='contenedormayor'>
+    <div id='contenedor'>
+	<div id='mensaje'>
+	    [[<span id='corchete'>MANTENIMIENTO DE PROVEEDORES</span>]]  
+	</div>
+	<div id='espaciovacio'></div>
+	<div id='addnew'>
+	    <a href="proveedor/new">AGREGAR</a>
+	</div>
+	<div id='contenido'></div>
+	<?
+	include('clases/paginacion.class.php');
+	$pag = new Paginacion();
+	$pag->getPaginas(10);
+	$pag->getPage($page);
+	$pag->getConsulta("SELECT * FROM proveedor where estado =1 ORDER BY CODIGO DESC");
+	$pag->getUrl("/ventas/maestros/proveedor/");
+	if(!$pag->query){
+	    //$this->queryError;
+	}else{?>
+	    <div id='contendentro'>
+		<table>
+		    <thead>
+			<tr>
+			    <th width='30px'>CODIGO</th>
+			    <th>RAZON SOCIAL</th>
+			    <th>DIRECCION</th>
+			    <th width='120px'>DNI / RUC</th>
+			    <th width='100px'>CIUDAD</th>
+			    <th width='90px'>TELEFONO</th>
+			    <th width='10px'>M</th>
+			    <th width='10px'>E</th>
+			</tr>
+		    </thead>
+		    <tbody>
+		    <? foreach($pag->resultado as $resulta){ ?>
+			<tr>
+			    <td align='center'><? echo $resulta['codigo']; ?></td>
+			    <td><? echo $resulta['nombres']; ?></td>
+			    <td><? echo $resulta['direccion']; ?></td>
+			    <td><? echo $resulta['dniruc']; ?></td>
+			    <td><? echo $resulta['ciudad']; ?></td>
+			    <td><? echo $resulta['telefono']; ?></td>
+			    <td>
+				<a href="proveedor/edit/<? echo $resulta['codigo'];?>">
+				    <img src='/ventas/imagen/database_edit.png'>
+				</a>
+			    </td>
+			    <td>
+				<a href="javascript:deleteID('<? echo $resulta['codigo'];?>','proveedor')">
+				    <img src='/ventas/imagen/delete.png'>
+				</a>
+			    </td>
+			</tr>
+		    <? } ?>
+		    </tbody>
+		</table>
+		<!-- INICIO DE PAGINACION -->
+		<table>
+		    <thead>
+			<tr>
+			    <th>
+				<? $pag->verPaginacion(); ?>
+			    </th>
+			</tr>
+		    </thead>
+		</table>
+	    </div>
+	<?}?>
+    </div>
+</div>

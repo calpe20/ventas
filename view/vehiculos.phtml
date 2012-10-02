@@ -1,0 +1,80 @@
+<div id='contenedormayor'>
+	<div id='contenedor'>
+		<div id='contenido'>
+			<div id='mensaje'>
+				[[<span id='corchete'>MANTENIMIENTO DE VEHICULOS</span>]]  
+			</div>
+			<div id='espaciovacio'></div>
+			<div id='addnew'>
+				<a href="vehiculos/new">AGREGAR</a>
+			</div>
+		</div>
+		<?
+		include('clases/paginacion.class.php');
+		$pag = new Paginacion();
+		$pag->getPaginas(10);
+		$pag->getPage($page);
+		$pag->getConsulta("SELECT * FROM vehiculos ORDER BY ID_CARRO DESC");
+		$pag->getUrl("/transportes/maestros/vehiculos/");
+		if(!$pag->query){
+			//$this->queryError;
+		}else{
+		?>
+			<div id='contendentro'>
+				<table>
+					<thead>
+						<tr>
+							<th>PLACA</th>
+							<th>ALIAS</th>
+							<th>MARCA</th>
+							<th>MODELO</th>
+							<th>AÑO</th>
+							<th>SERIE</th>
+							<th>MOTOR</th>
+							<th>CARROCERIA</th>
+							<th>COMBUSTIBLE</th>
+							<th>M</th>
+							<th>E</th>
+						</tr>
+					</thead>
+					<tbody>
+						<? foreach($pag->resultado as $resulta){ ?>
+						<tr>
+							<td align='center' width='50px'><? echo $resulta['placa']; ?></td>
+							<td><? echo $resulta['titulo']; ?></td>
+							<td><? echo $resulta['marca']; ?></td>
+							<td width='80px'><? echo $resulta['modelo']; ?></td>
+							<td><? echo $resulta['ano']; ?></td>
+							<td><? echo $resulta['serie']; ?></td>
+							<td ><? echo $resulta['motor']; ?></td>
+							<td ><? echo $resulta['carroceria']; ?></td>
+							<td ><? echo $resulta['combustible']; ?></td>
+							<td width='20px'>
+								<a href="javascript:Enviar('pruebas.php','contenido')">
+								<img src='/transportes/imagen/database_edit.png'>
+								</a>
+							</td>
+							<td width='20px'>
+								<a href="javascript:eliminar('../clases/choferesController.php?opt=del&id=','<? echo $resulta['codigo']; ?>','contenido')">
+								<img src='/transportes/imagen/delete.png'>
+								</a>
+							</td>
+						</tr>
+						<? } ?>
+					</tbody>
+				</table>
+				<!-- INICIO DE PAGINACION -->
+				<table>
+					<thead>
+						<tr>
+							<th>
+							<? $pag->verPaginacion(); ?>
+							</th>
+						</tr>
+					</thead>
+				</table>
+				<!-- FIN DE PAGINACION -->
+			</div>
+		<?}?>
+	</div>
+</div>

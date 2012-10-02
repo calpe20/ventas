@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+body {
+	margin:0 auto;
+	padding:0px 0px 0px 0px;
+	background:#fff  url('../imagen/body.png') ;
+	font-family:verdana,Arial, Tahoma,Century gothic,  sans-serif;
+	}
+*{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	padding:0;
+	margin:0;
+	text-transform:uppercase;
+}
+#mensaje{
+	/*border: 1px solid red;*/
+	padding: 5px;
+	background-color: #75EE3B;
+	color: #2F8F00;
+	font-size: 16px;
+}
+a{
+	text-decoration:none;
+	color: #000000;
+	/*padding: 2px 10px 2px 10px;*/
+}
+a hover{
+	color:red;
+}
+img{
+	border:none;
+}
+#contenedor{
+	border:1px solid #C0C0C0;
+	background-color:#ffffff;
+	padding:5px;
+}
+#contenedormayor{
+	margin: auto;
+	padding:10px;
+}
+#espaciovacio{
+	padding: 2px;
+}
+#addnew{
+	text-align: center;
+	width: 80px;
+	padding: 2px;
+	background-color: #f1f1f1;
+	border:1px solid #C0C0C0;
+	font-weight: bold;
+}
+#corchete{
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+}
+#retornar{
+	background-color: #f1f1f1;
+	border:1px solid #C0C0C0;
+	padding: 3px;
+}
+small{
+	font-size:9px;
+}
+/* INICIO DE TABLAS */
+table{
+	width:100%;
+	margin:auto;
+}
+td{
+	border:1px solid #D3D3D3;
+	padding:5px;
+	background-color: #E5FCFF;
+}
+
+th{
+	background-color:#679ED2;
+	padding:5px;
+}
+/* FIN DE TABLAS */
+form{
+	border:0px solid #C0C0C0;
+	background-color:#F2F2F2;
+	width:100%;
+	margin:auto;
+	margin-bottom:20px;
+}
+
+form p{
+	margin:auto;
+	width:450px;
+	margin-top:5px;
+	margin-bottom:3px;
+}
+form input{
+	border:1px solid #CCCCCC;
+	padding:3px;
+}
+
+form .text{
+	width:400px;
+}
+label{
+	width: 300px;
+	font-weight: bolder;
+	padding: 2px
+}
+nav {
+	text-align: left;
+	padding: 5px 20px;
+	background-color: #000000;
+	border-bottom: 1px solid;
+}
+/*#submenu{
+	text-align: center;
+	padding: 5px;
+	background-color: #f1f1f1;
+	border: 1px solid;
+}*/
+nav a{
+	font-size:12px;
+	color: #ffffff;
+	padding: 2px 10px;
+}
+/* INICIO PAGINACION */
+/* -------------------------------------------- */
+/* ----------- Pagination: Digg Style --------- */
+/* -------------------------------------------- */
+ul    { border:0; margin:0; padding:0; }
+#pagination-digg li          { border:0; margin:0; padding:0; font-size:11px; list-style:none; /* savers */ float:left; }
+#pagination-digg a           { border:solid 1px #9aafe5; margin-right:2px; }
+#pagination-digg .previous-off,
+#pagination-digg .next-off   { background-color:white;border:solid 1px #DEDEDE; color:#888888; display:block; float:left; font-weight:bold; margin-right:2px; padding:3px 4px; }
+#pagination-digg .next a,
+#pagination-digg .previous a { font-weight:bold; background-color:white;}
+#pagination-digg .active     { background:#2e6ab1; color:#FFFFFF; font-weight:bold; display:block; float:left; padding:4px 6px; /* savers */ margin-right:2px; }
+#pagination-digg a:link,
+#pagination-digg a:visited   { color:#0e509e; display:block; float:left; padding:3px 6px; text-decoration:none; }
+#pagination-digg a:hover     { border:solid 1px #0e509e; }
+/* FIN DE PAGINACION */

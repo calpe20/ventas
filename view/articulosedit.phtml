@@ -1,0 +1,35 @@
+<div id='contenedormayor'>
+    <div id='contenedor'>
+        <div id='mensaje'>
+            [[<span id='corchete'>MODIFICAR - CHOFER | <? echo $_GET['id'];?></span>]]  
+        </div>
+        <form action='/ventas/maestros/articulos/update' method='POST'>
+            <? $Objarticulo->buscarArt($_GET['id']);
+                foreach($Objarticulo->resultado as $resulta){ ?>
+            <div id=espaciovacio>
+            <input type=hidden name=codigo id=codigo value='<?=$_GET['id'];?>'>
+            <input type=hidden name=estado id=estado value='<?=$resulta['estado'];?>'>
+            <label>ARTICULO</label>
+            <input type=text name=articulo id=articulo value='<?=$resulta['articulo'];?>'  required>
+            <label>MARCA</label>
+            <input type=text name=marca id=marca value='<?=$resulta['marca'];?>' required>
+            <label>MODELO</label>
+            <input type=text name=modelo id=modelo value='<?=$resulta['modelo'];?>'>
+            </div>
+            <div id=espaciovacio>
+            <label>PROVEEDOR</label>
+            <input type=text name=id_provee id=id_provee value='<?=$resulta['id_provee'];?>' required>
+            <label>PRECIO</label>
+            <input type=text name=precio id=precio value='<?=$resulta['precio'];?>' required>
+            <label>OBSERVACION</label>
+            <input type=text name=observa id=observa value='<?=$resulta['observ'];?>'>
+            </div>
+            <div id='mensaje'>    
+            <input type='submit' value='GRABAR'>
+            <input type='reset' value='CANCELAR'>
+            <a href="/ventas/maestros/articulos" id=retornar>RETORNAR</a>
+            </div>
+            <? }?>
+        </form>
+    </div>
+</div>

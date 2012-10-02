@@ -1,0 +1,8 @@
+RewriteEngine On
+
+#RewriteRule ^contacto$ contacto.php [L]
+RewriteRule ^([0-9-a-z]+)$ index.php?accion=$1 [S] 
+RewriteRule ^([0-9-a-z]+)/([0-9-a-z]+)$ index.php?accion=$1&sub=$2 [L]
+RewriteRule ^([0-9-a-z]+)/([0-9-a-z]+)/([a-z]+)$ index.php?accion=$1&sub=$2&opt=$3 [L]
+RewriteRule ^([0-9-a-z]+)/([0-9-a-z]+)/([0-9]+)$ index.php?accion=$1&sub=$2&page=$3 [L]
+RewriteRule ^([0-9-a-z]+)/([0-9-a-z]+)/([a-z]+)/([0-9]+)$ index.php?accion=$1&sub=$2&opt=$3&id=$4  [L]

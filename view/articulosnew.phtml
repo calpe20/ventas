@@ -1,0 +1,30 @@
+<div id='contenedormayor'>
+    <div id='contenedor'>
+        <div id='mensaje'>
+            [[<span id='corchete'>ARTICULO NUEVO</span>]]  
+        </div>
+        <form action='/ventas/maestros/articulos/save' method='POST'>
+            <div id=espaciovacio>
+            <label>ARTICULO</label>
+            <input type=text name=articulo id=articulo  required>
+            <label>MARCA</label>
+            <input type=text name=marca id=marca required>
+            <label>MODELO</label>
+            <input type=text name=modelo id=modelo>
+            </div>
+            <div id=espaciovacio>
+            <label>PROVEEDOR</label>
+            <input type=text name=id_provee id=id_provee required>
+            <label>PRECIO</label>
+            <input type=text name=precio id=precio required>
+            <label>OBSERVACION</label>
+            <input type=text name=observa id=observa>
+            </div>
+            <div id='mensaje'>    
+            <input type='submit' value='GRABAR'>
+            <input type='reset' value='CANCELAR'>
+            <a href="/ventas/maestros/articulos" id=retornar>RETORNAR</a>
+            </div>
+        </form>
+    </div>
+</div>
